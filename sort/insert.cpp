@@ -2,22 +2,31 @@
 
 void insertSort(int a[], int n)
 {
-    for (int i = 0; i < n - 1; i++)
-    {
+    int i =1;
+   while (i<n)
+   {
         int key = i;
         if (a[key] < a[i - 1])
         {
-            for (int j = i; j > 0; j--)
+
+            for (int j = i-1; j >= 0; j--)
             {
-                std::swap(a[j], a[key]);
+                if(a[key] < a[j])
+                {
+                    std::swap(a[j], a[key]);
+                    key = j;
+                }
             }
+            i++;
+        }else{
+            i++;
         }
     }
 }
 
 int main()
 {
-    int a[20];
+    int a[217];
     int n = sizeof(a) / sizeof(*a);
     for (int i = 0; i < n; i++)
     {
@@ -27,7 +36,7 @@ int main()
     {
         std::cout << a[i] << "\t";
     }
-    std::cout << "\n";
+    std::cout << "\n"<<"Sorted List-------------------------"<<"\n";
     insertSort(a, n);
     for (int i = 0; i < n; i++)
     {
