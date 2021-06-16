@@ -27,10 +27,8 @@ void insertSort(int a[], int n)
 int main()
 {
     using std::chrono::high_resolution_clock;
-    using std::chrono::duration_cast;
     using std::chrono::duration;
-    using std::chrono::milliseconds;
-    int a[80000];
+    int a[100000];
     int n = sizeof(a) / sizeof(*a);
     for (int i = 0; i < n; i++)
     {
